@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* small adjustments when a mobile device is detected by uiContext */
+.is-mobile body, .is-mobile #root {
+  font-size: 15px;
+}
+
+.is-mobile .chat-message {
+  max-width: 80%;
+}
+
+/* dark theme tweaks */
+.dark {
+  --bg: #071024;
+  --panel: #0b1220;
+  --text: #e6eef8;
+  --muted: #9fb3d6;
+}
+
+body { background-color: var(--bg, white); color: var(--text, #111827); }
+.dark body { background-color: var(--bg); color: var(--text); }
+
+.dark .bg-white { background-color: var(--panel) !important; }
+.dark .text-gray-800 { color: var(--text) !important; }
+/* tweak common utility colors for better dark appearance */
+.dark .bg-gray-200 { background-color: #102233 !important; }
+.dark .border-gray-200 { border-color: #163044 !important; }
+.dark .bg-gray-100 { background-color: #0e2536 !important; }
+.dark .text-gray-600 { color: #97b0cf !important; }
